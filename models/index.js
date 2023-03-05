@@ -5,7 +5,7 @@ const TeachersModel = require('./teachers.model');
 const ProfilesModel = require('./profiles.model');
 
 UsersModel.sync();
-StudentsModel.sync({froce: true});
+StudentsModel.sync();
 TeachersModel.sync();
-ProfilesModel.sync({force: true});
+ProfilesModel.sync();
 module.exports = sequelize;
