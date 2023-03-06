@@ -27,5 +27,5 @@ const Students = sequelize.define("students", {
     
 })
 
-Students.belongsTo(UsersModel, { foreignKey: 'userId', as: 'user'})
+Students.belongsTo(UsersModel, { foreignKey: 'userId', as: 'user'});
 module.exports = Students;

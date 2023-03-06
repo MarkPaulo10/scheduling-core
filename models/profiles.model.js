@@ -37,7 +37,7 @@ const Profiles = sequelize.define("profiles", {
 
     
 })
+Profiles.belongsTo(TeachersModel, { foreignKey: 'teacherId', as: 'teacher' });
+Profiles.belongsTo(StudentsModel, { foreignKey: 'studentId', as: 'student' });
 
-Profiles.belongsTo(TeachersModel, { foreignKey: 'teacherId', as: 'teacher'})
-Profiles.belongsTo(StudentsModel, { foreignKey: 'studentId', as: 'student'})
 module.exports = Profiles;

@@ -1,11 +1,13 @@
 const ProfilesModel = require('../models/profiles.model');
+const Teachers = require('../models/teachers.model');
 
 exports.getProfile = async (req,res) => {
     try {
         let _id = req.params.id
+        console.log(_id)
         let result = await ProfilesModel.findOne({
             where : {_id},
-            include: 'teacher'
+            include: ['teacher', 'student']
         })
         res.send(result);
     } catch (error) {
