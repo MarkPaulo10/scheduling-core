@@ -27,7 +27,7 @@ const Profiles = sequelize.define("profiles", {
     },
     teacherId: {
         type: DataType.INTEGER,
-
+        
     },
     studentId: {
         type: DataType.INTEGER,
