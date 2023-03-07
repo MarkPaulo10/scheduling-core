@@ -1,13 +1,11 @@
 const TeachersModel = require('../models/teachers.model');
 
-exports.getTeacher = async (req,res) => {
+exports.getTeacherById = async (req,res) => {
     try {
-        console.log(req.query.includes)
-        if(req.query.includes == "user"){
-            let result = await TeachersModel.findAll({include: 'user'})
+            let userId = req.params.id;
+            let result = await TeachersModel.findOne({where: {userId: userId }, include: [ 'user', 'profile']})
             res.send(result);
             return;
-        }
     } catch (error) {
         console.log(error);
     }

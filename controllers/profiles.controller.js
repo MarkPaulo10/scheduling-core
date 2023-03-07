@@ -1,7 +1,8 @@
 const ProfilesModel = require('../models/profiles.model');
 const Teachers = require('../models/teachers.model');
 
-exports.getProfile = async (req,res) => {
+
+exports.getProfileById = async (req,res) => {
     try {
         let _id = req.params.id
         console.log(_id)

@@ -1,7 +1,5 @@
 const DataType = require('sequelize');
 const sequelize = require('../utils/database');
-const StudentsModel = require('./students.model');
-const TeachersModel = require('./teachers.model');
 
 const Profiles = sequelize.define("profiles", {
     _id: {
@@ -24,20 +22,9 @@ const Profiles = sequelize.define("profiles", {
     suffix: {
         type: DataType.STRING,
         allowNull: true
-    },
-    teacherId: {
-        type: DataType.INTEGER,
-        
-    },
-    studentId: {
-        type: DataType.INTEGER,
-
-    },
-
-
-    
+    },    
 })
-Profiles.belongsTo(TeachersModel, { foreignKey: 'teacherId', as: 'teacher' });
-Profiles.belongsTo(StudentsModel, { foreignKey: 'studentId', as: 'student' });
+// Profiles.belongsTo(TeachersModel, { foreignKey: 'profile', as: 'profile' });
+
 
 module.exports = Profiles;

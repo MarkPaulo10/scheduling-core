@@ -19,7 +19,7 @@ const Schedules = sequelize.define('schedules', {
     },
     status: {
         type: DataType.ENUM,
-        values: ['pending', 'approved', 'rejected',]
+        values: ['pending', 'approved', 'rejected', 'done']
     },
     teacherId: {
         type: DataType.INTEGER,
@@ -33,6 +33,6 @@ const Schedules = sequelize.define('schedules', {
 
 Schedules.belongsTo(StudentsModel, { foreignKey: 'studentId', as: 'student' });
 Schedules.belongsTo(TeachersModel, { foreignKey: 'teacherId', as: 'teacher' });
-// Schedules.belongsTo(ProfilesModel, { foreignKey: 'teacherId', as: 'profile' });
+Schedules.belongsTo(ProfilesModel, { foreignKey: 'teacherId', as: 'profile' });
 
 module.exports = Schedules;

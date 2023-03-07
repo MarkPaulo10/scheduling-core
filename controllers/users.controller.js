@@ -87,7 +87,7 @@ exports.profile = async (req,res) => {
                 return;
             }
             let user = await UsersModel.findOne({where: {_id : token.userId}})
-            res.send(user)
+            res.send(user);
         })
 
     } catch (error) {

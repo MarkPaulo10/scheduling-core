@@ -1,7 +1,7 @@
 const DataType = require('sequelize');
 const sequelize = require('../utils/database');
 const UsersModel = require('./users.model');
-const ProfilesModel = require('./users.model');
+const ProfilesModel = require('./profiles.model');
 
 
 const Teachers = sequelize.define("teachers", {
@@ -16,11 +16,14 @@ const Teachers = sequelize.define("teachers", {
     },
     userId: {
         type: DataType.INTEGER,
-        allowNull: false
     },
+    profileId:{
+        type: DataType.INTEGER
+    }
     
 })
 
 Teachers.belongsTo(UsersModel, { foreignKey: 'userId', as: 'user'});
+Teachers.belongsTo(ProfilesModel, {foreignKey: 'profileId', as: 'profile'})
 
 module.exports = Teachers;
