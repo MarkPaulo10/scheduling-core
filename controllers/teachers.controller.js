@@ -10,9 +10,20 @@ exports.getTeacherById = async (req,res) => {
         console.log(error);
     }
 }
+exports.updateTeacher = async (req,res) => {
+    try {
+        let _id = req.params.id;
+        let payload = req.body;
+        console.log(payload);
+        let result = await TeachersModel.update({subject: payload.subject}, {where: {_id}})
+        res.send(result);
+    } catch (error) {
+        console.log(error);
+    }
+}
 exports.createTeacher = async (req,res) => {
     try {
-        let data = req.body;
+        let payload = req.body;
         console.log(data);
         let result = await TeachersModel.create(data)
         res.send(result);

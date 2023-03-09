@@ -29,6 +29,10 @@ const Schedules = sequelize.define('schedules', {
         type: DataType.INTEGER,
 
     },
+    isActive: {
+        type: DataType.BOOLEAN,
+        defaultValue: true
+    }
 })
 
 Schedules.belongsTo(StudentsModel, { foreignKey: 'studentId', as: 'student' });

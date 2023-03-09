@@ -21,6 +21,16 @@ exports.getStudentById = async (req,res) => {
         console.log(error);
     }
 }
+exports.updateStudent = async (req,res) => {
+    try {
+        let _id = req.params.id;
+        let payload = req.body;
+         let result = await StudentsModel.update( payload, { where: {_id}})
+         res.send(result);
+    } catch (error) {
+        console.log(error);
+    }
+}
 exports.createStudent = async (req,res) => {
     try {
         let data = req.body;
