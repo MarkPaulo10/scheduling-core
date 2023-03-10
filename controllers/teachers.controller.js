@@ -24,8 +24,7 @@ exports.updateTeacher = async (req,res) => {
 exports.createTeacher = async (req,res) => {
     try {
         let payload = req.body;
-        console.log(data);
-        let result = await TeachersModel.create(data)
+        let result = await TeachersModel.create(payload)
         res.send(result);
     } catch (error) {
         console.log(error);

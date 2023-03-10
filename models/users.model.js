@@ -19,6 +19,9 @@ const Users = sequelize.define("users", {
         type: DataType.STRING,
         allowNull: false
     },
+    resetCode: {
+        type: DataType.INTEGER,
+    },
     password: {
         type: DataType.STRING,
         allowNull: false

@@ -12,7 +12,7 @@ const Teachers = sequelize.define("teachers", {
     },
     subject: {
         type: DataType.STRING,
-        allowNull: true
+
     },
     userId: {
         type: DataType.INTEGER,
